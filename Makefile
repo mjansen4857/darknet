@@ -1,7 +1,7 @@
-GPU=0
-CUDNN=0
-CUDNN_HALF=0
-OPENCV=0
+GPU=1
+CUDNN=1
+CUDNN_HALF=1
+OPENCV=1
 AVX=0
 OPENMP=0
 LIBSO=0
@@ -23,6 +23,9 @@ ARCH= -gencode arch=compute_35,code=sm_35 \
 	    -gencode arch=compute_61,code=[sm_61,compute_61]
 
 OS := $(shell uname)
+
+# GeForce RTX 4090
+ARCH= -gencode arch=compute_89,code=[sm_89,compute_89]
 
 # GeForce RTX 3070, 3080, 3090
 # ARCH= -gencode arch=compute_86,code=[sm_86,compute_86]
